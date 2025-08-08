@@ -29,7 +29,7 @@ if (!empty($block->getPublicKey())):
             ?>
             globals: {
                 uenc: '<?php echo $block->getEncodedUrl(); ?>',
-                formkey: '<?php echo $block->getFormKey(); ?>',
+                formkey: '<?php echo $escaper->escapeJs($escaper->escapeHtml($block->getFormKey())); ?>',
                 currency_symbol: '<?php echo $block->getCurrentCurrencySymbol(); ?>',
                 currency_iso: '<?php echo $block->getCurrentCurrencyCode(); ?>'
             },
